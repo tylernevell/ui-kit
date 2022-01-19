@@ -4,6 +4,7 @@ import styles from './button.module.css';
 /*
   TODO:
     1. Add on Loader css and functionality
+    2. change size styling. kinda not great rn. Consider getting rid of it
 */
 
 interface ButtonProps {
@@ -16,7 +17,6 @@ interface ButtonProps {
     | 'flat'
     | 'flat-white'
     | 'secondary-dark';
-  backgroundColor?: string;
   size?: 'small' | 'medium' | 'large';
   label: string;
   labelType?: 'label' | 'label-icon' | 'icon' | 'icon-circle';
@@ -38,7 +38,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const {
     type = 'button',
     buttonType = 'primary',
-    backgroundColor,
     size = 'medium',
     label = 'Button',
     labelType = 'label',
@@ -61,7 +60,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
       type={type}
       disabled={disabled}
       className={`${styles.button} ${styles[size]} ${styles[buttonType]}`}
-      style={{ backgroundColor }}
     >
       {label}
     </button>

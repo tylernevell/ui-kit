@@ -15,7 +15,13 @@
   transition-duration: 200ms;
 }
 
-/* buttonTypes */
+:disabled {
+  cursor: not-allowed;
+}
+
+/** BUTTON TYPES **/
+
+/* primary */
 .primary {
   color: #fff;
   border-color: transparent;
@@ -33,22 +39,42 @@
 }
 .primary:disabled {
   background-color: #8ab8d7;
-  cursor: not-allowed;
 }
 
+/* secondary */
 .secondary {
   color: #1470af;
   border-color: #1470af;
   border-width: 2px;
   background-color: #fff;
 }
+.secondary:disabled {
+  color: #8ab8d7;
+  border-color: #8ab8d7;
+}
 
+/* flat */
 .flat {
   color: #1470af;
   background-color: transparent;
-  border: 0;
+  border-color: transparent;
 }
 
+/* shared properties */
+.secondary:hover,
+.flat:hover {
+  background-color: #1471af0e;
+}
+.secondary:active,
+.flat:active {
+  background-color: #1471af34;
+}
+.secondary:focus,
+.flat:focus {
+  border-color: #1111117a;
+}
+
+/** SIZES **/
 .small {
   font-size: 12px;
   padding: 10px 16px;
