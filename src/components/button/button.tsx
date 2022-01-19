@@ -5,22 +5,19 @@ import styles from './button.module.css';
   TODO:
     1. Add on Loader css and functionality
     2. change size styling. kinda not great rn. Consider getting rid of it
+    3. Add monochrome button
 */
 
 interface ButtonProps {
   type: 'submit' | 'button' | 'reset';
-  buttonType?:
-    | 'primary'
-    | 'primary-white'
-    | 'secondary'
-    | 'secondary-white'
-    | 'flat'
-    | 'flat-white'
-    | 'secondary-dark';
+  buttonType?: 'primary' | 'secondary' | 'flat';
+  // | 'secondary-white'
+  // | 'primary-white'
+  // | 'flat-white'
+  // | 'secondary-dark';
   size?: 'small' | 'medium' | 'large';
   label: string;
-  labelType?: 'label' | 'label-icon' | 'icon' | 'icon-circle';
-  href?: string;
+  // labelType?: 'label' | 'label-icon' | 'icon' | 'icon-circle';
   id?: string;
   name?: string;
   disabled?: boolean;
@@ -40,8 +37,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     buttonType = 'primary',
     size = 'medium',
     label = 'Button',
-    labelType = 'label',
-    href,
+    // labelType = 'label',
     id,
     name,
     disabled,
@@ -59,6 +55,19 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
     <button
       type={type}
       disabled={disabled}
+      id={id}
+      key={id}
+      ref={ref}
+      name={name}
+      aria-label={ariaLabel}
+      aria-expanded={ariaExpanded}
+      aria-haspopup={ariaHasPopup}
+      onClick={onClick}
+      onKeyPress={onClick}
+      data-toggle={dataToggle}
+      data-action={dataAction}
+      data-id={dataId}
+      data-review={dataReview}
       className={`${styles.button} ${styles[size]} ${styles[buttonType]}`}
     >
       {label}
