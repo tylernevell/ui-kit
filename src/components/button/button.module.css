@@ -1,0 +1,89 @@
+.button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  border-style: solid;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  cursor: pointer;
+  line-height: 1;
+  justify-content: center;
+  white-space: nowrap;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+:disabled {
+  cursor: not-allowed;
+}
+
+/** BUTTON TYPES **/
+
+/* primary */
+.primary {
+  color: #fff;
+  border-color: transparent;
+  background-color: #1470af;
+}
+.primary:hover {
+  background-color: #12659e;
+}
+.primary:active {
+  background-color: #0e4e7a;
+}
+.primary:focus {
+  border-width: 2px;
+  border-color: #1111116b;
+}
+.primary:disabled {
+  background-color: #8ab8d7;
+}
+
+/* secondary */
+.secondary {
+  color: #1470af;
+  border-color: #1470af;
+  border-width: 2px;
+  background-color: #fff;
+}
+.secondary:disabled {
+  color: #8ab8d7;
+  border-color: #8ab8d7;
+}
+
+/* flat */
+.flat {
+  color: #1470af;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* shared properties */
+.secondary:hover,
+.flat:hover {
+  background-color: #1471af0e;
+}
+.secondary:active,
+.flat:active {
+  background-color: #1471af34;
+}
+.secondary:focus,
+.flat:focus {
+  border-color: #1111117a;
+}
+
+/** SIZES **/
+.small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.medium {
+  font-size: 14px;
+  padding: 0.7rem 1.25rem;
+}
+.large {
+  font-size: 16px;
+  padding: 12px 24px;
+}
