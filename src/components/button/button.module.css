@@ -1,28 +1,61 @@
 .button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  border: 0;
-  border-radius: 3em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  border-style: solid;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
   cursor: pointer;
-  display: inline-block;
   line-height: 1;
+  justify-content: center;
+  white-space: nowrap;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
 }
+
+/* buttonTypes */
 .primary {
-  color: white;
-  background-color: #1ea7fd;
+  color: #fff;
+  border-color: transparent;
+  background-color: #1470af;
 }
+.primary:hover {
+  background-color: #12659e;
+}
+.primary:active {
+  background-color: #0e4e7a;
+}
+.primary:focus {
+  border-width: 2px;
+  border-color: #1111116b;
+}
+.primary:disabled {
+  background-color: #8ab8d7;
+  cursor: not-allowed;
+}
+
 .secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  color: #1470af;
+  border-color: #1470af;
+  border-width: 2px;
+  background-color: #fff;
 }
+
+.flat {
+  color: #1470af;
+  background-color: transparent;
+  border: 0;
+}
+
 .small {
   font-size: 12px;
   padding: 10px 16px;
 }
 .medium {
   font-size: 14px;
-  padding: 11px 20px;
+  padding: 0.7rem 1.25rem;
 }
 .large {
   font-size: 16px;

@@ -1,50 +1,73 @@
-import React from 'react';
+import { AriaAttributes, forwardRef } from 'react';
 import styles from './button.module.css';
 
+/*
+  TODO:
+    1. Add on Loader css and functionality
+*/
+
 interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
+  type: 'submit' | 'button' | 'reset';
+  buttonType?:
+    | 'primary'
+    | 'primary-white'
+    | 'secondary'
+    | 'secondary-white'
+    | 'flat'
+    | 'flat-white'
+    | 'secondary-dark';
   backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
   size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
   label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
+  labelType?: 'label' | 'label-icon' | 'icon' | 'icon-circle';
+  href?: string;
+  id?: string;
+  name?: string;
+  disabled?: boolean;
+  dataToggle?: string;
+  dataAction?: DOMStringMap;
+  dataId?: string;
+  dataReview?: string;
+  ariaLabel?: string;
+  ariaHasPopup?: AriaAttributes['aria-haspopup'];
+  ariaExpanded?: AriaAttributes['aria-expanded'];
+  onClick?: (event: React.MouseEvent | React.KeyboardEvent) => void;
 }
 
-/**
- * Primary UI component for user interaction
- */
-const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+  const {
+    type = 'button',
+    buttonType = 'primary',
+    backgroundColor,
+    size = 'medium',
+    label = 'Button',
+    labelType = 'label',
+    href,
+    id,
+    name,
+    disabled,
+    dataToggle,
+    dataAction,
+    dataId,
+    dataReview,
+    ariaLabel,
+    ariaHasPopup,
+    ariaExpanded,
+    onClick,
+  } = props;
+
   return (
     <button
-      type="button"
-      className={`${styles.button} ${styles[size]} ${styles[mode]}`}
+      type={type}
+      disabled={disabled}
+      className={`${styles.button} ${styles[size]} ${styles[buttonType]}`}
       style={{ backgroundColor }}
-      {...props}
     >
       {label}
     </button>
   );
-};
+});
+
+Button.displayName = 'Button';
 
 export { Button };
