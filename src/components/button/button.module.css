@@ -34,7 +34,7 @@
   background-color: #0e4e7a;
 }
 .primary:focus {
-  border-width: 2px;
+  border-width: 0.13rem;
   border-color: #1111116b;
 }
 .primary:disabled {
@@ -45,7 +45,7 @@
 .secondary {
   color: #1470af;
   border-color: #1470af;
-  border-width: 2px;
+  border-width: 0.13rem;
   background-color: #fff;
 }
 .secondary:disabled {
@@ -76,14 +76,14 @@
 
 /** SIZES **/
 .small {
-  font-size: 12px;
-  padding: 10px 16px;
+  font-size: 0.875rem;
+  padding: 0.625rem 1rem;
 }
 .medium {
-  font-size: 14px;
+  font-size: 1rem;
   padding: 0.7rem 1.25rem;
 }
 .large {
-  font-size: 16px;
-  padding: 12px 24px;
+  font-size: 1.125rem;
+  padding: 0.75rem 1.5rem;
 }
