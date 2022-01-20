@@ -1,0 +1,123 @@
+/*
+  #ffffff
+  #eaeaee
+  #1470af  https://maketintsandshades.com/#1470af
+  #000000
+
+  Position Colors:
+  #d10b33 QB
+  #7dad45 RB
+  #1d0eff WR
+  #823bab TE
+  #fe39ff K
+  #e78447 DEF
+*/
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.button_button__4-vvU {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  border-style: solid;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  cursor: pointer;
+  line-height: 1;
+  justify-content: center;
+  white-space: nowrap;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+:disabled {
+  cursor: not-allowed;
+}
+
+/** BUTTON TYPES **/
+
+/* primary */
+.button_primary__BK63\+ {
+  color: #fff;
+  border-color: transparent;
+  background-color: #1470af;
+}
+.button_primary__BK63\+:hover {
+  background-color: #12659e;
+}
+.button_primary__BK63\+:active {
+  background-color: #0e4e7a;
+}
+.button_primary__BK63\+:focus {
+  border-width: 2px;
+  border-color: #1111116b;
+}
+.button_primary__BK63\+:disabled {
+  background-color: #8ab8d7;
+}
+
+/* secondary */
+.button_secondary__bhiuF {
+  color: #1470af;
+  border-color: #1470af;
+  border-width: 2px;
+  background-color: #fff;
+}
+.button_secondary__bhiuF:disabled {
+  color: #8ab8d7;
+  border-color: #8ab8d7;
+}
+
+/* flat */
+.button_flat__RVrEE {
+  color: #1470af;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+/* shared properties */
+.button_secondary__bhiuF:hover,
+.button_flat__RVrEE:hover {
+  background-color: #1471af0e;
+}
+.button_secondary__bhiuF:active,
+.button_flat__RVrEE:active {
+  background-color: #1471af34;
+}
+.button_secondary__bhiuF:focus,
+.button_flat__RVrEE:focus {
+  border-color: #1111117a;
+}
+
+/** SIZES **/
+.button_small__9ggcU {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.button_medium__XpQSW {
+  font-size: 14px;
+  padding: 0.7rem 1.25rem;
+}
+.button_large__T7Vhv {
+  font-size: 16px;
+  padding: 12px 24px;
+}
+
+
+/*# sourceMappingURL=main.27f6d559.css.map*/
