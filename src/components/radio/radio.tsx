@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import styles from './radio.module.css';
 
 /*
   TODO:
@@ -27,7 +28,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
   } = props;
 
   return (
-    <label htmlFor={value} aria-labelledby="gdesc1">
+    <label htmlFor={value} aria-labelledby="gdesc1" className={styles.radio}>
       <input
         type="radio"
         id={value}
