@@ -3,7 +3,8 @@ import styles from './radio.module.css';
 
 /*
   TODO:
-    1. Add typography for name
+    1. Add and fix disabled CSS class
+    2. Add typography for name
 */
 
 interface RadioProps {
