@@ -42,7 +42,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>((props, ref) => {
         // onClick={onClick}
         onChange={onChange}
       />
-      {name}
+      <span>{name}</span>
     </label>
   );
 });
