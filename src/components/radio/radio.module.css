@@ -9,9 +9,15 @@
   cursor: pointer;
   white-space: nowrap;
 }
+.radio:disabled {
+  cursor: not-allowed;
+}
 
 span {
   margin-top: 0.19rem;
+}
+span:disabled {
+  color: #11111165;
 }
 
 input[type='radio'] {
@@ -39,7 +45,4 @@ input[type='radio']:checked:hover {
 }
 input[type='radio']:checked:focus {
   border-color: #1111118e;
-}
-input[type='radio']:disabled {
-  color: #11111165;
 }

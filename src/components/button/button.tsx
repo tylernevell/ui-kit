@@ -16,7 +16,7 @@ interface ButtonProps {
   // | 'flat-white'
   // | 'secondary-dark';
   size?: 'small' | 'medium' | 'large';
-  label: string;
+  label?: string;
   // labelType?: 'label' | 'label-icon' | 'icon' | 'icon-circle';
   id?: string;
   name?: string;
