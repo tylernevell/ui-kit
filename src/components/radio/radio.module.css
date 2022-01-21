@@ -9,9 +9,11 @@
   cursor: pointer;
   white-space: nowrap;
 }
+
 span {
   margin-top: 0.19rem;
 }
+
 input[type='radio'] {
   appearance: none;
   width: 1.25rem;
