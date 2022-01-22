@@ -12,6 +12,7 @@ const Template: ComponentStory<typeof Shadow> = (args) => (
     style={{
       display: 'grid',
       gap: '3rem',
+      width: '20rem',
     }}
   >
     <Shadow {...args}>
