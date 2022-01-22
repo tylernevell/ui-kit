@@ -1,0 +1,8 @@
+input[type='text'] {
+  border: 0px;
+  background: transparent;
+}
+
+input[type='text']:focus {
+  outline: transparent;
+}
