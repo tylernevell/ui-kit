@@ -10,4 +10,8 @@ export default {
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
 export const Inputs = Template.bind({});
-Inputs.args = {};
+Inputs.args = {
+  validationFunction: (value: string) => value.length > 8,
+  label: 'Name > 8 Chars',
+  placeholder: 'Name > 8 chars',
+};

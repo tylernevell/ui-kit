@@ -1,5 +1,25 @@
+div {
+  display: grid;
+  width: 20rem;
+  height: 3.5rem;
+  padding-left: 0.5rem;
+  border: 0px;
+  background: transparent;
+  border-radius: 0.2rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+label {
+  color: #1111117a;
+}
+
 input[type='text'] {
   border: 0px;
+  padding: 0;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
   background: transparent;
 }
 
