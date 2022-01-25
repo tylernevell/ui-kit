@@ -1,9 +1,10 @@
+import React from 'react';
 import styles from './typography.module.css';
 
 /* 
   TODO:
     1. Look into additional tags like article and their heirarchy in relation to custom typography component
-    2. Add ability to pass down custom inline styles
+    2. DONE - Add ability to pass down custom inline styles 
 */
 
 type VariantTypes =
@@ -22,6 +23,7 @@ interface TypographyPropsType {
   variant: VariantTypes;
   bold?: boolean;
   textAlign?: 'left' | 'center' | 'right' | 'justify';
+  style?: React.CSSProperties;
   // className?: '';
   // color?: '';
 }
@@ -32,8 +34,7 @@ const Typography = (props: TypographyPropsType) => {
     variant,
     bold = false,
     textAlign = 'left',
-    // className,
-    // color,
+    style,
   } = props;
 
   if (variant.includes('p')) {
@@ -42,7 +43,7 @@ const Typography = (props: TypographyPropsType) => {
     return (
       <Tag
         className={`${styles[variant]} ${styles[textAlign]}`}
-        style={bold ? { fontWeight: '700' } : {}}
+        style={Object.assign({}, { fontWeight: bold ? '700' : '' }, style)}
       >
         {children}
       </Tag>
@@ -50,7 +51,11 @@ const Typography = (props: TypographyPropsType) => {
   } else {
     const Tag = variant as keyof JSX.IntrinsicElements;
 
-    return <Tag className={`${styles[textAlign]}`}>{children}</Tag>;
+    return (
+      <Tag className={`${styles[textAlign]}`} style={style}>
+        {children}
+      </Tag>
+    );
   }
 };
 
