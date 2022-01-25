@@ -1,11 +1,13 @@
 .color-container {
+  display: flex;
   display: grid;
   gap: 1.5rem;
-  width: 55rem;
+  width: 100%;
 }
 
 .color-display {
-  width: 55rem;
+  width: 100%;
+  max-width: 55rem;
   height: 4.75rem;
   border-radius: 0.5rem;
 }
