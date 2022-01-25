@@ -7,54 +7,63 @@ import styles from './input.module.css';
   TODO:
     1. Make input passable to other components and APIs
     2. Add AriaLabels
+    3. Style for Success and Autofill
 */
 
 interface InputProps {
   label: string;
-  placeholder: string;
   id: string;
   name: string;
   validationFunction: (value: string) => boolean;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
-  const { label, placeholder, id, name, validationFunction } = props;
+  const { label, id, name, validationFunction } = props;
 
   const [enteredValue, setEnteredValue] = useState('');
   const [formIsValid, setFormIsValid] = useState(false);
   const [formIsEntered, setFormIsEntered] = useState(false);
+  const [isNotTouchedYet, setIsNotTouchedYet] = useState(true);
 
   const valueChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEnteredValue(e.target.value);
   };
 
   const focusHandler = () => {
-    setFormIsEntered(false);
+    setIsNotTouchedYet(false);
   };
 
   const validationHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormIsValid(validationFunction(e.target.value));
     setFormIsEntered(true);
+    setFormIsValid(validationFunction(e.target.value));
   };
 
   return (
     <Shadow shadowType={formIsValid === formIsEntered ? 'default' : 'error'}>
-      <div>
-        <label htmlFor={id}>
-          <Typography variant={formIsEntered ? 'p3' : 'p2'}>{label}</Typography>
+      <div className={styles.input}>
+        <label htmlFor={id} className={styles.input}>
+          <Typography
+            variant={isNotTouchedYet ? 'p2' : 'p3'}
+            style={
+              isNotTouchedYet
+                ? { marginBottom: '0' }
+                : { marginTop: '0.31rem', marginBottom: '0.06rem' }
+            }
+          >
+            {label}
+          </Typography>
+          <input
+            type="text"
+            ref={ref}
+            id={id}
+            name={name}
+            value={enteredValue}
+            onChange={valueChangeHandler}
+            onFocus={focusHandler}
+            onBlur={validationHandler}
+            className={styles.textfield}
+          />
         </label>
-        <input
-          type="text"
-          ref={ref}
-          id={id}
-          name={name}
-          value={enteredValue}
-          placeholder={placeholder}
-          onChange={valueChangeHandler}
-          onFocus={focusHandler}
-          onBlur={validationHandler}
-          className={styles.textfield}
-        />
       </div>
     </Shadow>
   );

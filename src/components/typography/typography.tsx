@@ -4,7 +4,7 @@ import styles from './typography.module.css';
 /* 
   TODO:
     1. Look into additional tags like article and their heirarchy in relation to custom typography component
-    2. Add ability to pass down custom inline styles
+    2. DONE - Add ability to pass down custom inline styles 
 */
 
 type VariantTypes =
