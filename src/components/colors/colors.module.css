@@ -1,0 +1,11 @@
+.color-container {
+  display: grid;
+  gap: 1.5rem;
+  width: 55rem;
+}
+
+.color-display {
+  width: 55rem;
+  height: 4.75rem;
+  border-radius: 0.5rem;
+}
